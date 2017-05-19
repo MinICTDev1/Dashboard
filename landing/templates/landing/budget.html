@@ -1,0 +1,73 @@
+{% extends "landing/base.html" %}
+
+  {% block content %}
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar static-top navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'index' %}">Project & Budget Monitoring System</a>
+        <div class="collapse navbar-collapse" id="navbarExample">
+            <ul class="sidebar-nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'budget' %}"><i class="fa fa-balance-scale"></i> Budget</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'projects' %}"><i class="fa fa-tasks"></i> Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'compare' %}"><i class="fa fa-pie-chart" aria-hidden="true"></i> Comparative Analytics </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'predict' %}"><i class="fa fa-line-chart" aria-hidden="true"></i> Predictive Analytics </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'export' %}"><i class="fa fa-download" aria-hidden="true"></i> View and Export </a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <div class="content-wrapper py-3">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
+                <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
+            </ol>
+
+
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /.content-wrapper -->
+
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/tether/tether.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/static/vendor/chart.js/Chart.min.js"></script>
+    <script src="/static/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/static/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/static/js/sb-admin.min.js"></script>
+
+  
+  {% endblock %}
