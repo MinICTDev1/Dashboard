@@ -1,4 +1,5 @@
 import datetime
+import django_tables2 as tables
 
 from django.db import models
 from django.utils import timezone
@@ -80,3 +81,6 @@ class Budget(models.Model):
     
     def actuualAmount(self):
         return str(self.Estimates)
+
+class Person(models.Model):
+    name = models.CharField(max_length=200,verbose_name="full name")

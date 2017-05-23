@@ -1,5 +1,9 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+import django_tables2 as tables
+
+from .models import Person
+
 # Create your views here.
 
 def index(request):
@@ -20,7 +24,5 @@ def compare(request):
 def export(request):
     return render(request, 'landing/export.html')
 
-def simple_list(request):
-    queryset = Simple.objects.all()
-    table = SimpleTable(queryset)
-    return render(request, 'landing/simple_list.html', {'table': table})    
+def people(request):
+    return render(request, 'landing/people.html', {'people': Person.objects.all()})

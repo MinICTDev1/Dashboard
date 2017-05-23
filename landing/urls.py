@@ -1,4 +1,5 @@
 from django.conf.urls import url
+import django_tables2 as tables
 
 from . import views
 
@@ -14,4 +15,5 @@ urlpatterns = [
     url(r'^compare/$', views.compare, name='compare'),
     # ex: /landing/export/
     url(r'^export/$', views.export, name='export'),
+    url(r'^people/$', views.people, name='people'),
 ]
