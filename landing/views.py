@@ -19,3 +19,8 @@ def compare(request):
 
 def export(request):
     return render(request, 'landing/export.html')
+
+def simple_list(request):
+    queryset = Simple.objects.all()
+    table = SimpleTable(queryset)
+    return render(request, 'landing/simple_list.html', {'table': table})    
