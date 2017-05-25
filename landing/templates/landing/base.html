@@ -2,6 +2,7 @@
 
 <html lang="en">
   <head>
+    {% load render_table from django_tables2 %}
     {% load static %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +30,9 @@
     <script src="/static/js/highmaps.js"></script>
     <script src="/static/js/exporting.js"></script>
     <script src="/static/js/ug-all.js"></script> 
+
+    <!-- Stylesheet for budget -->
+    <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
 
   </head>
   <body id="page-top">

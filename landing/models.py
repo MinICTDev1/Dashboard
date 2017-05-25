@@ -2,6 +2,10 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import gettext as _
+from multiselectfield import MultiSelectField
+import django_tables2 as tables
+
  
 class Year(models.Model):
     #year = models.PositiveIntegerField(default=2017)
@@ -62,21 +66,3 @@ class Project(models.Model):
     
     def whichDistrict(self):
         return self.district
-
-class Budget(models.Model):
-    fin_year = models.ForeignKey('Year', related_name='financial_years', on_delete=models.CASCADE)
-    Approved = models.PositiveIntegerField(default=0)
-    Estimates = models.PositiveIntegerField(default=0)
-    Actual = models.PositiveIntegerField(default=0)
-
-    def __str__(self):
-        return self.fin_year
-
-    def approvedAmount(self):
-        return str(self.Approved)
-    
-    def estimatesAmount(self):
-        return str(self.Estimates)
-    
-    def actuualAmount(self):
-        return str(self.Estimates)

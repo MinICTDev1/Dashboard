@@ -1,5 +1,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+import django_tables2 as tables
+
+
 # Create your views here.
 
 def index(request):
