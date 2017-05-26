@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'multiselectfield',
     'django_tables2',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# /home/jakana/work/monitoring/landing/static
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "landing/static"),
+    '/var/www/static/',
+]

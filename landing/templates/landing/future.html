@@ -39,7 +39,8 @@
             <!-- Breadcrumbs -->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
-                <li class="breadcrumb-item active"><i class="fa fa-tasks"></i> Projects </li>
+                <li class="breadcrumb-item "><i class="fa fa-tasks"></i> Projects </li>
+                <li class="breadcrumb-item active"><i class="fa fa-forward"></i> Future Projects </li>
 
             </ol>
 
@@ -110,15 +111,8 @@
                     </div>
                 </div>
             </div>
-            <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fa fa-map"></i> Map of Uganda Showing Districts and their population densities
-                </div>
-                <div class="card-block">
-                    <div id="container"></div>
-                </div>
-            </div>
 
+            {% load django_tables2 %} {%render_table table %}
         </div>
         <!-- /.container-fluid -->
 
