@@ -44,3 +44,4 @@ def stalled(request):
 def future(request):
     table = FutureTable(Project.objects.filter(project_status='FR'))
     return render(request, 'landing/future.html', {'table': table})
+
