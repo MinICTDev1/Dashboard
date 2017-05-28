@@ -27,105 +27,105 @@
             I = f.isTouchDevice,
             F = f.win,
             J = f.Renderer.prototype.symbols;
-        u(k.lang, {
-            printChart: "Print chart",
-            downloadPNG: "Download PNG image",
-            downloadJPEG: "Download JPEG image",
-            downloadPDF: "Download PDF document",
-            downloadSVG: "Download SVG vector image",
-            contextButtonTitle: "Chart context menu"
-        });
-        k.navigation = {
-            buttonOptions: {
-                theme: {},
-                symbolSize: 14,
-                symbolX: 12.5,
-                symbolY: 10.5,
-                align: "right",
-                buttonSpacing: 3,
-                height: 22,
-                verticalAlign: "top",
-                width: 24
-            }
-        };
-        n(!0, k.navigation, {
-            menuStyle: {
-                border: "1px solid #999999",
-                background: "#ffffff",
-                padding: "5px 0"
-            },
-            menuItemStyle: {
-                padding: "0.5em 1em",
-                background: "none",
-                color: "#333333",
-                fontSize: I ? "14px" : "11px",
-                transition: "background 250ms, color 250ms"
-            },
-            menuItemHoverStyle: {
-                background: "#335cad",
-                color: "#ffffff"
-            },
-            buttonOptions: {
-                symbolFill: "#666666",
-                symbolStroke: "#666666",
-                symbolStrokeWidth: 3,
-                theme: {
-                    fill: "#ffffff",
-                    stroke: "none",
-                    padding: 5
-                }
-            }
-        });
-        k.exporting = {
-            type: "image/png",
-            url: "https://export.highcharts.com/",
-            printMaxWidth: 780,
-            scale: 2,
-            buttons: {
-                contextButton: {
-                    className: "highcharts-contextbutton",
-                    menuClassName: "highcharts-contextmenu",
-                    symbol: "menu",
-                    _titleKey: "contextButtonTitle",
-                    menuItems: [{
-                            textKey: "printChart",
-                            onclick: function () {
-                                this.print()
-                            }
-                        }, {
-                            separator: !0
-                        }, {
-                            textKey: "downloadPNG",
-                            onclick: function () {
-                                this.exportChart()
-                            }
-                        }, {
-                            textKey: "downloadJPEG",
-                            onclick: function () {
-                                this.exportChart({
-                                    type: "image/jpeg"
-                                })
-                            }
-                        },
-                        {
-                            textKey: "downloadPDF",
-                            onclick: function () {
-                                this.exportChart({
-                                    type: "application/pdf"
-                                })
-                            }
-                        }, {
-                            textKey: "downloadSVG",
-                            onclick: function () {
-                                this.exportChart({
-                                    type: "image/svg+xml"
-                                })
-                            }
-                        }
-                    ]
-                }
-            }
-        };
+        // u(k.lang, {
+        //     printChart: "Print chart",
+        //     downloadPNG: "Download PNG image",
+        //     downloadJPEG: "Download JPEG image",
+        //     downloadPDF: "Download PDF document",
+        //     downloadSVG: "Download SVG vector image",
+        //     contextButtonTitle: "Chart context menu"
+        // });
+        // k.navigation = {
+        //     buttonOptions: {
+        //         theme: {},
+        //         symbolSize: 14,
+        //         symbolX: 12.5,
+        //         symbolY: 10.5,
+        //         align: "right",
+        //         buttonSpacing: 3,
+        //         height: 22,
+        //         verticalAlign: "top",
+        //         width: 24
+        //     }
+        // };
+        // n(!0, k.navigation, {
+        //     menuStyle: {
+        //         border: "1px solid #999999",
+        //         background: "#ffffff",
+        //         padding: "5px 0"
+        //     },
+        //     menuItemStyle: {
+        //         padding: "0.5em 1em",
+        //         background: "none",
+        //         color: "#333333",
+        //         fontSize: I ? "14px" : "11px",
+        //         transition: "background 250ms, color 250ms"
+        //     },
+        //     menuItemHoverStyle: {
+        //         background: "#335cad",
+        //         color: "#ffffff"
+        //     },
+        //     buttonOptions: {
+        //         symbolFill: "#666666",
+        //         symbolStroke: "#666666",
+        //         symbolStrokeWidth: 3,
+        //         theme: {
+        //             fill: "#ffffff",
+        //             stroke: "none",
+        //             padding: 5
+        //         }
+        //     }
+        // });
+        // k.exporting = {
+        //     type: "image/png",
+        //     url: "https://export.highcharts.com/",
+        //     printMaxWidth: 780,
+        //     scale: 2,
+        //     buttons: {
+        //         contextButton: {
+        //             className: "highcharts-contextbutton",
+        //             menuClassName: "highcharts-contextmenu",
+        //             symbol: "menu",
+        //             _titleKey: "contextButtonTitle",
+        //             menuItems: [{
+        //                     textKey: "printChart",
+        //                     onclick: function () {
+        //                         this.print()
+        //                     }
+        //                 }, {
+        //                     separator: !0
+        //                 }, {
+        //                     textKey: "downloadPNG",
+        //                     onclick: function () {
+        //                         this.exportChart()
+        //                     }
+        //                 }, {
+        //                     textKey: "downloadJPEG",
+        //                     onclick: function () {
+        //                         this.exportChart({
+        //                             type: "image/jpeg"
+        //                         })
+        //                     }
+        //                 },
+        //                 {
+        //                     textKey: "downloadPDF",
+        //                     onclick: function () {
+        //                         this.exportChart({
+        //                             type: "application/pdf"
+        //                         })
+        //                     }
+        //                 }, {
+        //                     textKey: "downloadSVG",
+        //                     onclick: function () {
+        //                         this.exportChart({
+        //                             type: "image/svg+xml"
+        //                         })
+        //                     }
+        //                 }
+        //             ]
+        //         }
+        //     }
+        // };
         f.post = function (a, b, e) {
             var c = t("form", n({
                 method: "post",
@@ -278,120 +278,120 @@
                     }, 1E3)
                 }
             },
-            contextMenu: function (a, b, e, c, f, m, g) {
-                var d = this,
-                    r = d.options.navigation,
-                    k = d.chartWidth,
-                    q = d.chartHeight,
-                    n = "cache-" + a,
-                    l = d[n],
-                    x = Math.max(f, m),
-                    y, z;
-                l || (d[n] = l = t("div", {
-                    className: a
-                }, {
-                    position: "absolute",
-                    zIndex: 1E3,
-                    padding: x + "px"
-                }, d.container), y = t("div", {
-                    className: "highcharts-menu"
-                }, null, l), v(y, u({
-                    MozBoxShadow: "3px 3px 10px #888",
-                    WebkitBoxShadow: "3px 3px 10px #888",
-                    boxShadow: "3px 3px 10px #888"
-                }, r.menuStyle)), z = function () {
-                    v(l, {
-                        display: "none"
-                    });
-                    g && g.setState(0);
-                    d.openMenu = !1
-                }, d.exportEvents.push(w(l, "mouseleave", function () {
-                    l.hideTimer = setTimeout(z, 500)
-                }), w(l, "mouseenter", function () {
-                    clearTimeout(l.hideTimer)
-                }), w(p, "mouseup",
-                    function (b) {
-                        d.pointer.inClass(b.target, a) || z()
-                    })), h(b, function (a) {
-                    if (a) {
-                        var b;
-                        a.separator ? b = t("hr", null, null, y) : (b = t("div", {
-                            className: "highcharts-menu-item",
-                            onclick: function (b) {
-                                b && b.stopPropagation();
-                                z();
-                                a.onclick && a.onclick.apply(d, arguments)
-                            },
-                            innerHTML: a.text || d.options.lang[a.textKey]
-                        }, null, y), b.onmouseover = function () {
-                            v(this, r.menuItemHoverStyle)
-                        }, b.onmouseout = function () {
-                            v(this, r.menuItemStyle)
-                        }, v(b, u({
-                            cursor: "pointer"
-                        }, r.menuItemStyle)));
-                        d.exportDivElements.push(b)
-                    }
-                }), d.exportDivElements.push(y,
-                    l), d.exportMenuWidth = l.offsetWidth, d.exportMenuHeight = l.offsetHeight);
-                b = {
-                    display: "block"
-                };
-                e + d.exportMenuWidth > k ? b.right = k - e - f - x + "px" : b.left = e - x + "px";
-                c + m + d.exportMenuHeight > q && "top" !== g.alignOptions.verticalAlign ? b.bottom = q - c - x + "px" : b.top = c + m - x + "px";
-                v(l, b);
-                d.openMenu = !0
-            },
-            addButton: function (a) {
-                var b = this,
-                    e = b.renderer,
-                    c = n(b.options.navigation.buttonOptions, a),
-                    f = c.onclick,
-                    m = c.menuItems,
-                    g, d, k = c.symbolSize || 12;
-                b.btnCount || (b.btnCount = 0);
-                b.exportDivElements || (b.exportDivElements = [], b.exportSVGElements = []);
-                if (!1 !== c.enabled) {
-                    var h = c.theme,
-                        q = h.states,
-                        p = q && q.hover,
-                        q = q && q.select,
-                        l;
-                    delete h.states;
-                    f ? l = function (a) {
-                        a.stopPropagation();
-                        f.call(b, a)
-                    } : m && (l = function () {
-                        b.contextMenu(d.menuClassName, m, d.translateX, d.translateY, d.width, d.height, d);
-                        d.setState(2)
-                    });
-                    c.text && c.symbol ? h.paddingLeft = C(h.paddingLeft, 25) : c.text || u(h, {
-                        width: c.width,
-                        height: c.height,
-                        padding: 0
-                    });
-                    d = e.button(c.text, 0, 0, l, h, p, q).addClass(a.className).attr({
-                        "stroke-linecap": "round",
-                        title: b.options.lang[c._titleKey],
-                        zIndex: 3
-                    });
-                    d.menuClassName = a.menuClassName ||
-                        "highcharts-menu-" + b.btnCount++;
-                    c.symbol && (g = e.symbol(c.symbol, c.symbolX - k / 2, c.symbolY - k / 2, k, k).addClass("highcharts-button-symbol").attr({
-                        zIndex: 1
-                    }).add(d), g.attr({
-                        stroke: c.symbolStroke,
-                        fill: c.symbolFill,
-                        "stroke-width": c.symbolStrokeWidth || 1
-                    }));
-                    d.add().align(u(c, {
-                        width: d.width,
-                        x: C(c.x, b.buttonOffset)
-                    }), !0, "spacingBox");
-                    b.buttonOffset += (d.width + c.buttonSpacing) * ("right" === c.align ? -1 : 1);
-                    b.exportSVGElements.push(d, g)
-                }
-            },
+            // contextMenu: function (a, b, e, c, f, m, g) {
+            //     var d = this,
+            //         r = d.options.navigation,
+            //         k = d.chartWidth,
+            //         q = d.chartHeight,
+            //         n = "cache-" + a,
+            //         l = d[n],
+            //         x = Math.max(f, m),
+            //         y, z;
+            //     l || (d[n] = l = t("div", {
+            //         className: a
+            //     }, {
+            //         position: "absolute",
+            //         zIndex: 1E3,
+            //         padding: x + "px"
+            //     }, d.container), y = t("div", {
+            //         className: "highcharts-menu"
+            //     }, null, l), v(y, u({
+            //         MozBoxShadow: "3px 3px 10px #888",
+            //         WebkitBoxShadow: "3px 3px 10px #888",
+            //         boxShadow: "3px 3px 10px #888"
+            //     }, r.menuStyle)), z = function () {
+            //         v(l, {
+            //             display: "none"
+            //         });
+            //         g && g.setState(0);
+            //         d.openMenu = !1
+            //     }, d.exportEvents.push(w(l, "mouseleave", function () {
+            //         l.hideTimer = setTimeout(z, 500)
+            //     }), w(l, "mouseenter", function () {
+            //         clearTimeout(l.hideTimer)
+            //     }), w(p, "mouseup",
+            //         function (b) {
+            //             d.pointer.inClass(b.target, a) || z()
+            //         })), h(b, function (a) {
+            //         if (a) {
+            //             var b;
+            //             a.separator ? b = t("hr", null, null, y) : (b = t("div", {
+            //                 className: "highcharts-menu-item",
+            //                 onclick: function (b) {
+            //                     b && b.stopPropagation();
+            //                     z();
+            //                     a.onclick && a.onclick.apply(d, arguments)
+            //                 },
+            //                 innerHTML: a.text || d.options.lang[a.textKey]
+            //             }, null, y), b.onmouseover = function () {
+            //                 v(this, r.menuItemHoverStyle)
+            //             }, b.onmouseout = function () {
+            //                 v(this, r.menuItemStyle)
+            //             }, v(b, u({
+            //                 cursor: "pointer"
+            //             }, r.menuItemStyle)));
+            //             d.exportDivElements.push(b)
+            //         }
+            //     }), d.exportDivElements.push(y,
+            //         l), d.exportMenuWidth = l.offsetWidth, d.exportMenuHeight = l.offsetHeight);
+            //     b = {
+            //         display: "block"
+            //     };
+            //     e + d.exportMenuWidth > k ? b.right = k - e - f - x + "px" : b.left = e - x + "px";
+            //     c + m + d.exportMenuHeight > q && "top" !== g.alignOptions.verticalAlign ? b.bottom = q - c - x + "px" : b.top = c + m - x + "px";
+            //     v(l, b);
+            //     d.openMenu = !0
+            // },
+            // addButton: function (a) {
+            //     var b = this,
+            //         e = b.renderer,
+            //         c = n(b.options.navigation.buttonOptions, a),
+            //         f = c.onclick,
+            //         m = c.menuItems,
+            //         g, d, k = c.symbolSize || 12;
+            //     b.btnCount || (b.btnCount = 0);
+            //     b.exportDivElements || (b.exportDivElements = [], b.exportSVGElements = []);
+            //     if (!1 !== c.enabled) {
+            //         var h = c.theme,
+            //             q = h.states,
+            //             p = q && q.hover,
+            //             q = q && q.select,
+            //             l;
+            //         delete h.states;
+            //         f ? l = function (a) {
+            //             a.stopPropagation();
+            //             f.call(b, a)
+            //         } : m && (l = function () {
+            //             b.contextMenu(d.menuClassName, m, d.translateX, d.translateY, d.width, d.height, d);
+            //             d.setState(2)
+            //         });
+            //         c.text && c.symbol ? h.paddingLeft = C(h.paddingLeft, 25) : c.text || u(h, {
+            //             width: c.width,
+            //             height: c.height,
+            //             padding: 0
+            //         });
+            //         d = e.button(c.text, 0, 0, l, h, p, q).addClass(a.className).attr({
+            //             "stroke-linecap": "round",
+            //             title: b.options.lang[c._titleKey],
+            //             zIndex: 3
+            //         });
+            //         d.menuClassName = a.menuClassName ||
+            //             "highcharts-menu-" + b.btnCount++;
+            //         c.symbol && (g = e.symbol(c.symbol, c.symbolX - k / 2, c.symbolY - k / 2, k, k).addClass("highcharts-button-symbol").attr({
+            //             zIndex: 1
+            //         }).add(d), g.attr({
+            //             stroke: c.symbolStroke,
+            //             fill: c.symbolFill,
+            //             "stroke-width": c.symbolStrokeWidth || 1
+            //         }));
+            //         d.add().align(u(c, {
+            //             width: d.width,
+            //             x: C(c.x, b.buttonOffset)
+            //         }), !0, "spacingBox");
+            //         b.buttonOffset += (d.width + c.buttonSpacing) * ("right" === c.align ? -1 : 1);
+            //         b.exportSVGElements.push(d, g)
+            //     }
+            // },
             destroyExport: function (a) {
                 var b = a ? a.target : this;
                 a = b.exportSVGElements;

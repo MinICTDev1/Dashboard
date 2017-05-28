@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'multiselectfield',
     'django_tables2',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +128,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# /home/jakana/work/monitoring/landing/static
+
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+>>>>>>> cfbe1180b99843f061f5215b4dcfa8c7a2779eb5
     '/var/www/static/',
 ]

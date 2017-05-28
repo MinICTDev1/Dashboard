@@ -9,7 +9,6 @@ import django_tables2 as tables
 
  
 class Year(models.Model):
-    #year = models.PositiveIntegerField(default=2017)
     financial_year = models.CharField(max_length=200)
     start_date = models.DateField(default='2017-07-01')
     end_date = models.DateField(default='2018-06-30')

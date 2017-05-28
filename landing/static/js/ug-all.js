@@ -2,9 +2,9 @@ Highcharts.maps["countries/ug/ug-all"] = {
     "title": "Uganda",
     "version": "1.1.2",
     "type": "FeatureCollection",
-    "copyright": "Copyright (c) 2015 Highsoft AS, Based on data from Natural Earth",
-    "copyrightShort": "Natural Earth",
-    "copyrightUrl": "http://www.naturalearthdata.com",
+    // "copyright": "Copyright (c) 2015 Highsoft AS, Based on data from Natural Earth",
+    // "copyrightShort": "Natural Earth",
+    // "copyrightUrl": "http://www.naturalearthdata.com",
     "crs": {
         "type": "name",
         "properties": {

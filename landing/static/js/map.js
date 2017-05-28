@@ -152,4 +152,3 @@ Highcharts.mapChart('container', {
         }
     }]
 });
-

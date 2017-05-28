@@ -1,7 +1,7 @@
 #container {
-    height: 1000px; 
-    min-width: 310px; 
-    max-width: 600px; 
+    height: 800px; 
+    min-width: 500px; 
+    max-width: 1000px; 
     margin: 0 auto; 
 }
 .loading {

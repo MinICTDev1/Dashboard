@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from dashing.utils import router
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^landing/', include('landing.urls')),
