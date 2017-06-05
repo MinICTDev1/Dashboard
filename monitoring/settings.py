@@ -133,6 +133,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
->>>>>>> cfbe1180b99843f061f5215b4dcfa8c7a2779eb5
     '/var/www/static/',
 ]
+
+LOGIN_REDIRECT_URL = '/'

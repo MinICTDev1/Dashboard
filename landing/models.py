@@ -60,39 +60,53 @@ class Project(models.Model):
 
     def __str__(self):
         return self.Project_name
-    
+
     def whichFinYear(self):
         return self.fin_year
-    
+
     def whichDistrict(self):
-        return str(self.district)
-    
+        return self.district
+
     def currentStatus(self):
         return str(self.project_status)
 
 class Budget(models.Model):
-
-    CATEGORY_CHOICES = (
-        (1, _('')),
-        (2, _('Petrol')),
-        (3, _('Stationary')),
-        (4, _('Allowances')),
+    JULY = 'JU'
+    AUGUST = 'AU'
+    SEPTEMBER = 'SE'
+    OCTOBER = 'OC'
+    NOVEMBER = 'NO'
+    DECEMBER = 'DE'
+    JANUARY = 'JE'
+    FEBRUARY = 'FE'
+    MARCH = 'MA'
+    APRIL = 'AP'
+    MAY = 'MY'
+    JUNE = 'JE'
+    MONTHS = (
+        ('JULY','july'),
+        ('AUGUST','august'),
+        ('SEPTEMBER','september'),
+        ('OCTOBER','october'),
+        ('NOVEMBER','november'),
+        ('DECEMBER','december'),
+        ('JANUARY','january'),
+        ('FEBRUARY','february'),
+        ('MARCH','march'),
+        ('APRIL','april'),
+        ('MAY','may'),
+        ('JUNE','june'),
     )
-    BudgetItem = models.CharField(max_length=200, default="")
+
     fin_year = models.ForeignKey('Year', related_name='financial_years', on_delete=models.CASCADE)
-    BudgetCategory = MultiSelectField(choices=CATEGORY_CHOICES,max_choices=1, default=1)
+    month = models.CharField(max_length=200,choices=MONTHS,default="JULY")
+    BudgetItem = models.CharField(max_length=200, default="")
     Approved = models.PositiveIntegerField(default=0)
     Estimates = models.PositiveIntegerField(default=0)
     Actual = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.BudgetItem
-
-    def __unicode__(self):
-        return self.__str__()
-
-    def WhichFinancialYear(self):
-        return self.fin_year
+        return '{}  {}'.format(str(self.fin_year), self.BudgetItem)
 
     def WhichCategory(self):
         return self.BudgetCategory

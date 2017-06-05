@@ -3,7 +3,9 @@ from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 import django_tables2 as tables
 from django_tables2 import RequestConfig
-from .models import Budget, Project
+from .models import Budget, Project,District
+from django.views.generic.list import ListView
+
 from .tables import BudgetTable, OngoingTable, CompletedTable, StalledTable, FutureTable
 
 # Create your views here.
@@ -18,6 +20,13 @@ def budget(request):
     table = BudgetTable(Budget.objects.all())
     RequestConfig(request).configure(table)
     return render(request, 'landing/budgets.html', {'table': table})
+
+class BudgetListingView(ListView):
+    model = Budget
+
+def get_context_data(self, **kwargs):
+    context = super(BudgetListingView, self).get_context_data(**kwargs)
+    return context
 
 def predict(request):
     return render(request, 'landing/predict.html')

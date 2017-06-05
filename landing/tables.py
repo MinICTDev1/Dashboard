@@ -11,22 +11,22 @@ class OngoingTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'200%'}
+        attrs = {'class': 'paleblue', 'width':'222%'}
 
 class CompletedTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'200%'}
+        attrs = {'class': 'paleblue', 'width':'222%'}
 
 class StalledTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'200%'}
+        attrs = {'class': 'paleblue', 'width':'222%'}
 
 class FutureTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'200%'}
+        attrs = {'class': 'paleblue', 'width':'222%'}
