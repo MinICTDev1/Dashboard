@@ -1,5 +1,6 @@
 import datetime
 import django_tables2 as tables
+from django.db.models import Sum
 
 from django.db import models
 from django.utils import timezone
@@ -106,7 +107,7 @@ class Budget(models.Model):
     Actual = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return '{}  {}'.format(str(self.fin_year), self.BudgetItem)
+        return '{} for  {} {} '.format(self.BudgetItem, str(self.fin_year), self.month)
 
     def WhichCategory(self):
         return self.BudgetCategory

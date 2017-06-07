@@ -25,5 +25,8 @@ urlpatterns = [
     url(r'^projects/stalled/$', views.stalled, name='stalled'),
     url(r'^projects/future/$', views.future, name='future'),
     
+    #for the individual months
+    url(r'^budget/july/$', views.july, name='july'),
+
 
 ]

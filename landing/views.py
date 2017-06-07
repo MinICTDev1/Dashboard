@@ -6,7 +6,7 @@ from django_tables2 import RequestConfig
 from .models import Budget, Project,District
 from django.views.generic.list import ListView
 
-from .tables import BudgetTable, OngoingTable, CompletedTable, StalledTable, FutureTable
+from .tables import *
 
 # Create your views here.
 
@@ -18,7 +18,7 @@ def projects(request):
 
 def budget(request):
     table = BudgetTable(Budget.objects.all())
-    RequestConfig(request).configure(table)
+    #RequestConfig(request).configure(table)
     return render(request, 'landing/budgets.html', {'table': table})
 
 class BudgetListingView(ListView):
@@ -37,6 +37,8 @@ def compare(request):
 def export(request):
     return render(request, 'landing/export.html')
 
+#Section containing projects
+
 def ongoing(request):
     table = OngoingTable(Project.objects.filter(project_status='OG'))
     return render(request, 'landing/ongoing.html', {'table': table})
@@ -52,3 +54,9 @@ def stalled(request):
 def future(request):
     table = FutureTable(Project.objects.filter(project_status='FR'))
     return render(request, 'landing/future.html', {'table': table})
+
+
+#Section containing individual month tables
+def july(request):
+    table = JulyBudgetTable(Budget.objects.filter(month="july"))
+    return render(request, 'landing/july.html', {'table': table})

@@ -4,8 +4,14 @@ from .models import Budget, Project
 class BudgetTable(tables.Table):
     class Meta:
         model = Budget
-        fields = ( "fin_year", "BudgetItem","BudgetCategory", "Approved", "Estimates", "Actual")
-        attrs = {'class': 'paleblue', 'width':'172%'}
+        fields = ( "fin_year", "BudgetItem", "Approved", "month", "Estimates", "Actual")
+        attrs = {'class': 'paleblue'}
+
+class JulyBudgetTable(tables.Table):
+    class Meta:
+        model = Budget
+        fields = ( "fin_year", "BudgetItem", "Approved", "month", "Estimates", "Actual")
+        attrs = {'class': 'paleblue'}
 
 class OngoingTable(tables.Table):
     class Meta:
