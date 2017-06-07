@@ -18,15 +18,15 @@ def projects(request):
 
 def budget(request):
     table = BudgetTable(Budget.objects.all())
-    #RequestConfig(request).configure(table)
+    RequestConfig(request).configure(table)
     return render(request, 'landing/budgets.html', {'table': table})
 
-class BudgetListingView(ListView):
-    model = Budget
+# class BudgetListingView(ListView):
+#     model = Budget
 
-def get_context_data(self, **kwargs):
-    context = super(BudgetListingView, self).get_context_data(**kwargs)
-    return context
+# def get_context_data(self, **kwargs):
+#     context = super(BudgetListingView, self).get_context_data(**kwargs)
+#     return context
 
 def predict(request):
     return render(request, 'landing/predict.html')
@@ -57,6 +57,6 @@ def future(request):
 
 
 #Section containing individual month tables
-def july(request):
-    table = JulyBudgetTable(Budget.objects.filter(month="july"))
-    return render(request, 'landing/july.html', {'table': table})
+# def july(request):
+#     table = JulyBudgetTable(Budget.objects.filter(month="july"))
+#     return render(request, 'landing/july.html', {'table': table})
