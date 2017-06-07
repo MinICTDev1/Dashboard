@@ -6,7 +6,7 @@ from django_tables2 import RequestConfig
 from .models import Budget, Project,District
 from django.views.generic.list import ListView
 
-from .tables import BudgetTable, OngoingTable, CompletedTable, StalledTable, FutureTable
+from .tables import *
 
 # Create your views here.
 
@@ -21,12 +21,9 @@ def budget(request):
     RequestConfig(request).configure(table)
     return render(request, 'landing/budgets.html', {'table': table})
 
-class BudgetListingView(ListView):
-    model = Budget
-
-def get_context_data(self, **kwargs):
-    context = super(BudgetListingView, self).get_context_data(**kwargs)
-    return context
+def julybudget(request):
+    table = JulyBudget(Budget.objects.all().filter('July'))
+    return render(request, 'budget/july.html', {'table': table})
 
 def predict(request):
     return render(request, 'landing/predict.html')
