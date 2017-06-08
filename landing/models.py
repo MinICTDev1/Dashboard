@@ -90,10 +90,10 @@ class Budget(models.Model):
     June = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return '{}  {}'.format(str(self.fin_year), self.BudgetItem)
+        return '{}  {}'.format(self.BudgetItem, str(self.fin_year))
 
-    def WhichCategory(self):
-        return self.BudgetCategory
+    def WhichItem(self):
+        return self.BudgetItem
 
     def approvedAmount(self):
         return str(self.Approved)
@@ -137,6 +137,10 @@ class Budget(models.Model):
     def juneAmount(self):
         return str(self.June)
 
-    def yearlyTotal(self):
+    def Total(self):
         tots = self.July+self.August+self.September+self.October+self.November+self.December+self.January+self.February+self.March+self.April+self.May+self.June
         return str(tots)
+
+    def TwoMonths(self):
+        two = self.July+self.August
+        return str(two)

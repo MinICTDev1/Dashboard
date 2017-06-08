@@ -17,13 +17,13 @@ urlpatterns = [
     # ex: /landing/export/
     url(r'^export/$', views.export, name='export'),
 
+    #respective months
     url(r'^july/$', views.julybudget, name='july'),
+    url(r'^august/$', views.augustbudget, name='august'),
 
     # for the project submenu's
     url(r'^projects/ongoing/$', views.ongoing, name='ongoing'),
     url(r'^projects/completed/$', views.completed, name='completed'),
     url(r'^projects/stalled/$', views.stalled, name='stalled'),
     url(r'^projects/future/$', views.future, name='future'),
-    
-
 ]

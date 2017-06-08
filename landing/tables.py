@@ -4,15 +4,20 @@ from .models import Budget, Project
 class BudgetTable(tables.Table):
     class Meta:
         model = Budget
-        fields = ( "fin_year", "BudgetItem","Approved","Estimates", "yearlyTotal")
-        attrs = {'class': 'paleblue', 'width':'172%'}
+        fields = ("BudgetItem","Approved","Estimates","July","August","September","October","November", "December", "January", "February" , "March", "April", "May" ,"June","Total")
+        attrs = {'class': 'paleblue'}
 
 class JulyBudget(tables.Table):
     class Meta:
         model = Budget
-        fields = ( "fin_year", "BudgetItem","Approved","Estimates", "July")
+        fields = ("BudgetItem","Approved","Estimates", "July")
         attrs = {'class': 'paleblue', 'width':'172%'}
 
+class AugustBudget(tables.Table):
+    class Meta:
+        model = Budget
+        fields = ("BudgetItem","Approved","Estimates", "July", "August", "TwoMonths")
+        attrs = {'class': 'paleblue', 'width':'172%'}
 
 
 

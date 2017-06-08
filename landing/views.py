@@ -9,21 +9,9 @@ from django.views.generic.list import ListView
 from .tables import *
 
 # Create your views here.
-
+#Base pages of the website
 def index(request):
     return render(request, 'landing/index.html')
-
-def projects(request):
-    return render(request, 'landing/projects.html')
-
-def budget(request):
-    table = BudgetTable(Budget.objects.all())
-    RequestConfig(request).configure(table)
-    return render(request, 'landing/budgets.html', {'table': table})
-
-def julybudget(request):
-    table = JulyBudget(Budget.objects.all().filter('July'))
-    return render(request, 'budget/july.html', {'table': table})
 
 def predict(request):
     return render(request, 'landing/predict.html')
@@ -33,6 +21,12 @@ def compare(request):
 
 def export(request):
     return render(request, 'landing/export.html')
+
+
+#Project section 
+
+def projects(request):
+    return render(request, 'landing/projects.html')
 
 def ongoing(request):
     table = OngoingTable(Project.objects.filter(project_status='OG'))
@@ -49,3 +43,17 @@ def stalled(request):
 def future(request):
     table = FutureTable(Project.objects.filter(project_status='FR'))
     return render(request, 'landing/future.html', {'table': table})
+
+
+#Budget Section
+def budget(request):
+    table = BudgetTable(Budget.objects.all())
+    return render(request, 'landing/budgets.html', {'table': table})
+
+def julybudget(request):
+    table = JulyBudget(Budget.objects.all())
+    return render(request, 'landing/july.html', {'table': table})
+
+def augustbudget(request):
+    table = AugustBudget(Budget.objects.all())
+    return render(request, 'landing/august.html', {'table': table})

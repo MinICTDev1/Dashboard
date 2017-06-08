@@ -13,7 +13,9 @@ body.fixed-nav {
       padding-top: 56px; } }
 
 .content-wrapper {
-  background: white; }
+  background: white; 
+  width: 100%;}
+  
   @media (min-width: 992px) {
     .content-wrapper {
       margin-left: 250px; } }

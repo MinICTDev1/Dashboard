@@ -11,8 +11,28 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'budgets' %}"><i class="fa fa-balance-scale"></i> Budget</a>
+            <li class="nav-item">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti"><i class="fa fa-balance-scale"></i> Budget</a>
+                <ul class="sidebar-second-level collapse" id="collapseMulti">
+                    <li>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">2017/2018</a>
+                        <ul class="sidebar-third-level collapse" id="collapseMulti2">
+                            <li><a href="{% url 'budgets' %}">Year overview</a></li>
+                            <li><a href="{% url 'july' %}">July</a></li>
+                            <li><a href="{% url 'august' %}">August</a></li>
+                            <li><a href="#">September</a></li>
+                            <li><a href="#">October</a></li>
+                            <li><a href="#">November</a></li>
+                            <li><a href="#">December</a></li>
+                            <li><a href="#">January</a></li>
+                            <li><a href="#">Febraury</a></li>
+                            <li><a href="#">March</a></li>
+                            <li><a href="#">April</a></li>
+                            <li><a href="#">May</a></li>
+                            <li><a href="#">June</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'projects' %}"><i class="fa fa-tasks"></i> Projects</a>
@@ -40,29 +60,12 @@
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
             <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
         </ol>
-        {% load django_tables2 %}{% render_table table %}
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">2017/2018
-  <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="{% url 'july' %}">July</a></li>
-                <li><a href="#">August</a></li>
-                <li><a href="#">September</a></li>
-                <li><a href="#">October</a></li>
-                <li><a href="#">November</a></li>
-                <li><a href="#">December</a></li>
-                <li><a href="#">January</a></li>
-                <li><a href="#">Febraury</a></li>
-                <li><a href="#">March</a></li>
-                <li><a href="#">April</a></li>
-                <li><a href="#">May</a></li>
-                <li><a href="#">June</a></li>
-            </ul>
-        </div>
-        <div>
-            <br>
-        </div>
 
+        {% load django_tables2 %}{% render_table table %}
+
+        <div id="piechart" style="width: 100%; height: 500px;"></div>
+
+        <div id="linechart_material" style="width: 100%; height: 500px;"></div>
 
     </div>
     <!-- /.container-fluid -->
