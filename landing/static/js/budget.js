@@ -13,11 +13,18 @@ function drawChart() {
         ['August', 2],
         ['September', 2],
         ['October', 2],
-        ['Sleep', 7]
+        ['November', 7],
+        ['December', 2],
+        ['January', 2],
+        ['February', 2],
+        ['March', 2],
+        ['April', 2],
+        ['May', 2],
+        ['June', 2],
     ]);
 
     var options = {
-        title: 'My Daily Activities',
+        title: 'Annual Expenditure',
         is3D: true,
     };
 
@@ -30,7 +37,7 @@ function drawChart() {
 function drawLineChart() {
 
     var data = new google.visualization.DataTable();
-    data.addColumn('number', 'Day');
+    data.addColumn('number', 'BudgetItem');
     data.addColumn('number', 'Guardians of the Galaxy');
     data.addColumn('number', 'The Avengers');
     data.addColumn('number', 'Transformers: Age of Extinction');
@@ -49,13 +56,13 @@ function drawLineChart() {
         [11, 5.3, 7.9, 4.7],
         [12, 6.6, 8.4, 5.2],
         [13, 4.8, 6.3, 3.6],
-        [14, 4.2, 6.2, 3.4]
+        [14, 4.2, 6.2, 3.4],
+        [15, 2.3, 5.6, 4.5]
     ]);
 
     var options = {
         chart: {
-            title: 'Box Office Earnings in First Two Weeks of Opening',
-            subtitle: 'in millions of dollars (USD)'
+            title: 'Ministry Of ICT spending during the financial year 2017/2018 in Uganda Shillings (UGX)'
         },
         width: 900,
         height: 500

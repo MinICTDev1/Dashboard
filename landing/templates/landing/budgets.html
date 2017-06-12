@@ -41,7 +41,7 @@
                 <a class="nav-link" href="{% url 'compare' %}"><i class="fa fa-pie-chart" aria-hidden="true"></i> Comparative Analytics </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'predict' %}"><i class="fa fa-line-chart" aria-hidden="true"></i> Predictive Analytics </a>
+                <a class="nav-link" href="{% url 'predict' %}"><i class="fa fa-space-shuttle" aria-hidden="true"></i> Predictive Analytics </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'export' %}"><i class="fa fa-download" aria-hidden="true"></i> View and Export </a>
@@ -51,21 +51,35 @@
     </div>
 </nav>
 
-<div class="content-wrapper py-3">
+<div class="content-wrapper py-3" style="width: 104%;">
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
 
         <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="width: 100%;">
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
             <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
         </ol>
 
         {% load django_tables2 %}{% render_table table %}
-
-        <div id="piechart" style="width: 100%; height: 500px;"></div>
-
-        <div id="linechart_material" style="width: 100%; height: 500px;"></div>
+        <div><br></div>
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-pie-chart"></i> PieChart showing Annual Expenditure
+            </div>
+            <div class="card-block">
+                <div id="piechart" style="height: 500px;"></div>
+            </div>
+        </div>
+        <div><br></div>
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-line-chart"></i> Line Chart showing expenditure patterns
+            </div>
+            <div class="card-block">
+                <div id="linechart_material" style="width: auto; height: 500px; margin: 0 auto"></div>
+            </div>
+        </div>
 
     </div>
     <!-- /.container-fluid -->
