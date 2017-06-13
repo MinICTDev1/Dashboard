@@ -6,6 +6,15 @@
 body {
   background: #292b2c; }
 
+#button{
+    border:solid 1px;
+    width: 25px;
+    height: 23px;
+    float:right;
+    cursor:pointer;
+    background: white;
+}
+
 body.fixed-nav {
   padding-top: 54px; }
   @media (min-width: 992px) {

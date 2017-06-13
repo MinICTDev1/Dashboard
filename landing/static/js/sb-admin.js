@@ -1,3 +1,21 @@
+function slider() {
+
+    if (document.getElementById("SideNav").style.display == "none") {
+
+        document.getElementById("SideNav").style.display = "inline";
+
+        document.getElementById("wrapper").style.paddingLeft = "225px";
+
+    } else {
+
+        document.getElementById("SideNav").style.display = "none";
+
+        document.getElementById("wrapper").style.paddingLeft = "0px";
+
+    }
+
+}
+
 (function ($) {
     "use strict"; // Start of use strict
 
@@ -126,4 +144,3 @@ var myLineChart = new Chart(ctx, {
         }
     }
 });
-

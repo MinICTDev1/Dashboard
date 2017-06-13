@@ -70,6 +70,10 @@ class Project(models.Model):
     def currentStatus(self):
         return str(self.project_status)
 
+    # @property
+    # def district_str(self):
+    #     return ', '.join([district.name for district in district.objects.all()])
+
 class Budget(models.Model):
 
     fin_year = models.ForeignKey('Year', related_name='financial_years', on_delete=models.CASCADE)
@@ -144,3 +148,15 @@ class Budget(models.Model):
     def TwoMonths(self):
         two = self.July+self.August
         return str(two)
+
+    def ThreeMonths(self):
+        three = self.July+self.August+self.September
+        return str(three)
+
+    def SixMonths(self):
+        six = self.July+self.August+self.September+self.October+self.November+self.December
+        return str(six)
+    
+    def NineMonths(self):
+        nine = self.July+self.August+self.September+self.October+self.November+self.December+self.January+self.February+self.March
+        return str(nine)

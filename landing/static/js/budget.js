@@ -5,8 +5,9 @@ google.charts.load('current', {'packages':['line']});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawLineChart);
 
-function drawChart() {
+window.data
 
+function drawChart() {
     var data = google.visualization.arrayToDataTable([
         ['Budget Item', 'Annual Expenditure'],
         ['July', 11],
