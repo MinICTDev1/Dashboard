@@ -2,31 +2,23 @@
 <!-- Navigation -->
 <nav id="mainNav" class="navbar static-top navbar-toggleable-md navbar-inverse bg-inverse">
 
-    <a class="navbar-brand" href="{% url 'index' %}" style="margin-right:100px">Project & Budget Monitoring System</a> 
+    <a class="navbar-brand" href="{% url 'index' %}" style="margin-right:100px">Project & Budget Monitoring System</a>
     <div class="collapse navbar-collapse">
-        <ul class="sidebar-nav navbar-nav" >
+        <ul class="sidebar-nav navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti"><i class="fa fa-balance-scale"></i> Budget</a>
+            <li class="nav-item ">
+                <a class="nav-link nav-link-collapse collapsed table" data-toggle="collapse" href="#collapseMulti"><i class="fa fa-balance-scale"></i> Budget</a>
                 <ul class="sidebar-second-level collapse" id="collapseMulti">
                     <li>
                         <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">2017/2018</a>
                         <ul class="sidebar-third-level collapse" id="collapseMulti2">
                             <li><a href="{% url 'budgets' %}">Year overview</a></li>
-                            <li><a href="{% url 'july' %}">July</a></li>
-                            <li><a href="{% url 'august' %}">August</a></li>
-                            <li><a href="#">September</a></li>
-                            <li><a href="#">October</a></li>
-                            <li><a href="#">November</a></li>
-                            <li><a href="#">December</a></li>
-                            <li><a href="#">January</a></li>
-                            <li><a href="#">Febraury</a></li>
-                            <li><a href="#">March</a></li>
-                            <li><a href="#">April</a></li>
-                            <li><a href="#">May</a></li>
-                            <li><a href="#">June</a></li>
+                            <li><a href="{% url 'first' %}">First Quarter</a></li>
+                            <li><a href="{% url 'second' %}">Second Quarter</a></li>
+                            <li><a href="{% url 'third' %}">Third Quarter</a></li>
+                            <li><a href="{% url 'fourth' %}">Fourth Quarter</a></li>
                         </ul>
                     </li>
                 </ul>

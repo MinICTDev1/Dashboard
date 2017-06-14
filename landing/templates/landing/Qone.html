@@ -52,20 +52,26 @@
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
             <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
         </ol>
-        {% load django_tables2 %}{% render_table table %}
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Table showing First Quarter 2017/2018
+            </div>
+            <div class="card-block">
+                {% load django_tables2 %}{% render_table table %}
+            </div>
+        </div>
         <div>
             <br>
         </div>
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">First Quarter Months
-    <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">July</a></li>
-                <li><a href="#">August</a></li>
-                <li><a href="#">September</a></li>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">First Quarter Months<span class="caret"></span></button>
+            <ul class="dropdown-menu" id='purpose'>
+                <li><a href="#" data-value="action1" id="July">July</a></li>
+                <li><a href="#" data-value="action2" id="August">August</a></li>
+                <li><a href="#" data-value="action3" id="September">September</a></li>
             </ul>
         </div>
-
+        <div class="July box" style="display:none"> This is the div that shows when July button is selected</div>
 
     </div>
     <!-- /.container-fluid -->

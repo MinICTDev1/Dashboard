@@ -22,13 +22,13 @@ class QuarterTwo(tables.Table):
 class QuarterThree(tables.Table):
         class Meta:
             model = Budget
-            attrs = {'class': 'paleblue'}
+            attrs = {'class': 'paleblue', 'width':'auto'}
             fields = ("BudgetItem","Approved","Estimates","July","August","September","October","November","December", "January", "February" , "March", "NineMonths")
 
 class QuarterFour(tables.Table):
         class Meta:
             model = Budget
-            attrs = {'class': 'paleblue'}
+            attrs = {'class': 'paleblue', 'width':'auto'}
             fields = ("BudgetItem","Approved","Estimates","July","August","September","October","November","December", "January", "February" , "March", "April", "May" ,"June","Total")
 
 class JulyBudget(tables.Table):
