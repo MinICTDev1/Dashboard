@@ -95,7 +95,11 @@ class Budget(models.Model):
     June = models.PositiveIntegerField(default=0)
 
     def __str__(self):
+<<<<<<< HEAD
         return '{}  {}'.format(self.BudgetItem, str(self.fin_year))
+=======
+        return '{} for  {} {} '.format(self.BudgetItem, str(self.fin_year), self.month)
+>>>>>>> master
 
     def WhichItem(self):
         return self.BudgetItem
@@ -106,6 +110,7 @@ class Budget(models.Model):
     def estimatesAmount(self):
         return str(self.Estimates)
 
+<<<<<<< HEAD
     def julyAmount(self):
         return str(self.July)
 
@@ -161,3 +166,7 @@ class Budget(models.Model):
     def NineMonths(self):
         nine = self.July+self.August+self.September+self.October+self.November+self.December+self.January+self.February+self.March
         return str(nine)
+=======
+    def actuualAmount(self):
+        return str(self.Estimates)
+>>>>>>> master
