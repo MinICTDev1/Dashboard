@@ -11,8 +11,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'budgets' %}"><i class="fa fa-balance-scale"></i> Budget</a>
+            <li class="nav-item ">
+                <a class="nav-link nav-link-collapse collapsed table" data-toggle="collapse" href="#collapseMulti"><i class="fa fa-balance-scale"></i> Budget</a>
+                <ul class="sidebar-second-level collapse" id="collapseMulti">
+                    <li>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">2017/2018</a>
+                        <ul class="sidebar-third-level collapse" id="collapseMulti2">
+                            <li><a href="{% url 'budgets' %}">Year overview</a></li>
+                            <li><a href="{% url 'first' %}">First Quarter</a></li>
+                            <li><a href="{% url 'second' %}">Second Quarter</a></li>
+                            <li><a href="{% url 'third' %}">Third Quarter</a></li>
+                            <li><a href="{% url 'fourth' %}">Fourth Quarter</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'projects' %}"><i class="fa fa-tasks"></i> Projects</a>
@@ -21,7 +33,7 @@
                 <a class="nav-link" href="{% url 'compare' %}"><i class="fa fa-pie-chart" aria-hidden="true"></i> Comparative Analytics </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'predict' %}"><i class="fa fa-line-chart" aria-hidden="true"></i> Predictive Analytics </a>
+                <a class="nav-link" href="{% url 'predict' %}"><i class="fa fa-space-shuttle" aria-hidden="true"></i> Predictive Analytics </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'export' %}"><i class="fa fa-download" aria-hidden="true"></i> View and Export </a>
@@ -31,40 +43,43 @@
     </div>
 </nav>
 
-<div class="content-wrapper py-3">
+<div class="content-wrapper py-3" style="width: 104%;">
 
     <div class="container-fluid">
 
         <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="width: 100%;">
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
             <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
         </ol>
-
-        <!--{% load django_tables2 %} {% render_table table %}-->
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">2017/2018
-  <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">July</a></li>
-                <li><a href="#">August</a></li>
-                <li><a href="#">September</a></li>
-                <li><a href="#">October</a></li>
-                <li><a href="#">November</a></li>
-                <li><a href="#">December</a></li>
-                <li><a href="#">January</a></li>
-                <li><a href="#">Febraury</a></li>
-                <li><a href="#">March</a></li>
-                <li><a href="#">April</a></li>
-                <li><a href="#">May</a></li>
-                <li><a href="#">June</a></li>
-            </ul>
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Table showing the Annual Expenditure
+            </div>
+            <div class="card-block">
+                {% load django_tables2 %}{% render_table table %}
+            </div>
         </div>
-        <div>
-            <br>
+        <div><br></div>
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-table"></i> PieChart showing Annual Expenditure
+            </div>
+            <div class="card-block">
+                <div id="piechart" style="height: 500px;"></div>
+            </div>
+        </div>
+        <div><br></div>
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-line-chart"></i> Line Chart showing expenditure patterns
+            </div>
+            <div class="card-block">
+                <div id="linechart_material" style="width: auto; height: 500px; margin: 0 auto"></div>
+            </div>
         </div>
 
+        {% comment %}{{ chart.as_html }}{% endcomment %}
 
     </div>
     <!-- /.container-fluid -->
@@ -89,6 +104,11 @@
 
 <!-- Custom scripts for this template -->
 <script src="/static/js/sb-admin.min.js"></script>
+
+{% comment %} Variable to store budget data{% endcomment %}
+<script>
+    var DOMAIN = "{{ site_domain }}";
+</script>
 
 
 {% endblock %}

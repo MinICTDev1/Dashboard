@@ -71,34 +71,46 @@ class Project(models.Model):
     def currentStatus(self):
         return str(self.project_status)
 
-    # @property
-    # def district_str(self):
-    #     return ', '.join([district.name for district in district.objects.all()])
-
 class Budget(models.Model):
+    JULY = 'JU'
+    AUGUST = 'AU'
+    SEPTEMBER = 'SE'
+    OCTOBER = 'OC'
+    NOVEMBER = 'NO'
+    DECEMBER = 'DE'
+    JANUARY = 'JE'
+    FEBRUARY = 'FE'
+    MARCH = 'MA'
+    APRIL = 'AP'
+    MAY = 'MY'
+    JUNE = 'JE'
+    MONTHS = (
+        ('JULY','july'),
+        ('AUGUST','august'),
+        ('SEPTEMBER','september'),
+        ('OCTOBER','october'),
+        ('NOVEMBER','november'),
+        ('DECEMBER','december'),
+        ('JANUARY','january'),
+        ('FEBRUARY','february'),
+        ('MARCH','march'),
+        ('APRIL','april'),
+        ('MAY','may'),
+        ('JUNE','june'),
+    )
 
     fin_year = models.ForeignKey('Year', related_name='financial_years', on_delete=models.CASCADE)
+    month = models.CharField(max_length=200,choices=MONTHS,default="JULY")
     BudgetItem = models.CharField(max_length=200, default="")
     Approved = models.PositiveIntegerField(default=0)
     Estimates = models.PositiveIntegerField(default=0)
-    July = models.PositiveIntegerField(default=0)
-    August = models.PositiveIntegerField(default=0)
-    September = models.PositiveIntegerField(default=0)
-    October = models.PositiveIntegerField(default=0)
-    November = models.PositiveIntegerField(default=0)
-    December = models.PositiveIntegerField(default=0)
-    January = models.PositiveIntegerField(default=0)
-    February = models.PositiveIntegerField(default=0)
-    March = models.PositiveIntegerField(default=0)
-    April = models.PositiveIntegerField(default=0)
-    May = models.PositiveIntegerField(default=0)
-    June = models.PositiveIntegerField(default=0)
+    Actual = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return '{}  {}'.format(self.BudgetItem, str(self.fin_year))
+        return '{} for  {} {} '.format(self.BudgetItem, str(self.fin_year), self.month)
 
-    def WhichItem(self):
-        return self.BudgetItem
+    def WhichCategory(self):
+        return self.BudgetCategory
 
     def approvedAmount(self):
         return str(self.Approved)
@@ -106,58 +118,5 @@ class Budget(models.Model):
     def estimatesAmount(self):
         return str(self.Estimates)
 
-    def julyAmount(self):
-        return str(self.July)
-
-    def augustAmount(self):
-        return str(self.August)
-
-    def septemberAmount(self):
-        return str(self.September)
-
-    def octoberAmount(self):
-        return str(self.October)
-
-    def novemberAmount(self):
-        return str(self.November)
-
-    def decemberAmount(self):
-        return str(self.December)
-
-    def januaryAmount(self):
-        return str(self.January)
-
-    def februaryAmount(self):
-        return str(self.February)
-
-    def marchAmount(self):
-        return str(self.March)
-
-    def aprilAmount(self):
-        return str(self.April)
-
-    def mayAmount(self):
-        return str(self.May)
-
-    def juneAmount(self):
-        return str(self.June)
-
-    def Total(self):
-        tots = self.July+self.August+self.September+self.October+self.November+self.December+self.January+self.February+self.March+self.April+self.May+self.June
-        return str(tots)
-
-    def TwoMonths(self):
-        two = self.July+self.August
-        return str(two)
-
-    def ThreeMonths(self):
-        three = self.July+self.August+self.September
-        return str(three)
-
-    def SixMonths(self):
-        six = self.July+self.August+self.September+self.October+self.November+self.December
-        return str(six)
-    
-    def NineMonths(self):
-        nine = self.July+self.August+self.September+self.October+self.November+self.December+self.January+self.February+self.March
-        return str(nine)
+    def actuualAmount(self):
+        return str(self.Estimates)

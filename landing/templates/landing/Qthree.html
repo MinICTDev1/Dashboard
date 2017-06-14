@@ -18,18 +18,10 @@
                         <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">2017/2018</a>
                         <ul class="sidebar-third-level collapse" id="collapseMulti2">
                             <li><a href="{% url 'budgets' %}">Year overview</a></li>
-                            <li><a href="{% url 'july' %}">July</a></li>
-                            <li><a href="{% url 'august' %}">August</a></li>
-                            <li><a href="#">September</a></li>
-                            <li><a href="#">October</a></li>
-                            <li><a href="#">November</a></li>
-                            <li><a href="#">December</a></li>
-                            <li><a href="#">January</a></li>
-                            <li><a href="#">Febraury</a></li>
-                            <li><a href="#">March</a></li>
-                            <li><a href="#">April</a></li>
-                            <li><a href="#">May</a></li>
-                            <li><a href="#">June</a></li>
+                            <li><a href="{% url 'first' %}">First Quarter</a></li>
+                            <li><a href="{% url 'second' %}">Second Quarter</a></li>
+                            <li><a href="{% url 'third' %}">Third Quarter</a></li>
+                            <li><a href="{% url 'fourth' %}">Fourth Quarter</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -37,7 +29,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'projects' %}"><i class="fa fa-tasks"></i> Projects</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'compare' %}"><i class="fa fa-pie-chart" aria-hidden="true"></i> Comparative Analytics </a>
             </li>
             <li class="nav-item">
@@ -58,9 +50,21 @@
         <!-- Breadcrumbs -->
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
-            <li class="breadcrumb-item active"> <i class="fa fa-pie-chart"></i> Comparative Analytics </li>
+            <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
         </ol>
-
+        {% load django_tables2 %}{% render_table table %}
+        <div>
+            <br>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Third Quarter Months
+    <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">January</a></li>
+                <li><a href="#">February</a></li>
+                <li><a href="#">March</a></li>
+            </ul>
+        </div>
 
 
 
@@ -71,8 +75,8 @@
 <!-- /.content-wrapper -->
 
 <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
+    <i class="fa fa-chevron-up"></i>
+</a>
 
 <!-- Bootstrap core JavaScript -->
 <script src="/static/vendor/jquery/jquery.min.js"></script>
