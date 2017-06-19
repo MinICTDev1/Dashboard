@@ -56,7 +56,7 @@ class OngoingTable(tables.Table):
 
     def render_district(self, value):
         if value is not None:
-            return ', '.join([District.name for category in value.all()])
+            return ', '.join([district.District_name for district in value.all()])
         return '-'
 
 class CompletedTable(tables.Table):
@@ -65,14 +65,35 @@ class CompletedTable(tables.Table):
         fields = ( "Project_name", "fin_year","district", "project_status")
         attrs = {'class': 'paleblue', 'width':'222%'}
 
+    district = tables.Column()
+
+    def render_district(self, value):
+        if value is not None:
+            return ', '.join([district.District_name for district in value.all()])
+        return '-'
+
 class StalledTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
         attrs = {'class': 'paleblue', 'width':'222%'}
 
+    district = tables.Column()
+
+    def render_district(self, value):
+        if value is not None:
+            return ', '.join([district.District_name for district in value.all()])
+        return '-'
+
 class FutureTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
         attrs = {'class': 'paleblue', 'width':'222%'}
+
+    district = tables.Column()
+
+    def render_district(self, value):
+        if value is not None:
+            return ', '.join([district.District_name for district in value.all()])
+        return '-'
