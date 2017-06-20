@@ -50,7 +50,8 @@
         <!-- Breadcrumbs -->
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
-            <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
+            <li class="breadcrumb-item"><i class="fa fa-balance-scale"></i> Budget </li>
+            <li class="breadcrumb-item active"> <i class="fa fa-battery-quarter"></i> Q1 </li>
         </ol>
         <div class="card mb-3" style="width: 99.5%;">
             <div class="card-header">
@@ -60,9 +61,6 @@
                 {% load django_tables2 %}{% render_table table %}
             </div>
         </div>
-        <div>
-            <br>
-        </div>
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">First Quarter Months<span class="caret"></span></button>
             <ul class="dropdown-menu" id='purpose'>
@@ -71,7 +69,39 @@
                 <li><a href="#" data-value="action3" id="September">September</a></li>
             </ul>
         </div>
-        <div class="July box" style="display:none"> This is the div that shows when July button is selected</div>
+        <br>
+        <div class="July box">
+            <div class="card mb-3" style="width: 99.5%;">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Table showing July 2017/2018
+                </div>
+                <div class="card-block">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="August box">
+            <div class="card mb-3" style="width: 99.5%;">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Table showing August 2017/2018
+                </div>
+                <div class="card-block">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="September box">
+            <div class="card mb-3" style="width: 99.5%;">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Table showing September 2017/2018
+                </div>
+                <div class="card-block">
+
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- /.container-fluid -->
@@ -96,6 +126,9 @@
 
 <!-- Custom scripts for this template -->
 <script src="/static/js/sb-admin.min.js"></script>
+
+<!--Script for switching -->
+<script src="/static/js/switcher.js"></script>
 
 
 {% endblock %}

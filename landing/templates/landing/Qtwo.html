@@ -50,24 +50,61 @@
         <!-- Breadcrumbs -->
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
-            <li class="breadcrumb-item active"> <i class="fa fa-balance-scale"></i> Budget </li>
+            <li class="breadcrumb-item"><i class="fa fa-balance-scale"></i> Budget </li>
+            <li class="breadcrumb-item active"> <i class="fa fa-battery-half"></i> Q2 </li>
         </ol>
-        {% load django_tables2 %}{% render_table table %}
+        <div class="card mb-3" style="width: 99.5%;">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Table showing Second Quarter 2017/2018
+            </div>
+            <div class="card-block">
+                {% load django_tables2 %}{% render_table table %}
+            </div>
+        </div>
         <div>
             <br>
         </div>
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Second Quarter Months
-    <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">October</a></li>
-                <li><a href="#">November</a></li>
-                <li><a href="#">December</a></li>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Second Quarter Months<span class="caret"></span></button>
+            <ul class="dropdown-menu" id='purpose'>
+                <li><a href="#" data-value="action1" id="October">October</a></li>
+                <li><a href="#" data-value="action2" id="November">November</a></li>
+                <li><a href="#" data-value="action3" id="December">December</a></li>
             </ul>
         </div>
+        <br>
+        <div class="October box">
+            <div class="card mb-3" style="width: 99.5%;">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Table showing October 2017/2018
+                </div>
+                <div class="card-block">
 
+                </div>
+            </div>
+        </div>
 
+        <div class="November box">
+            <div class="card mb-3" style="width: 99.5%;">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Table showing November 2017/2018
+                </div>
+                <div class="card-block">
 
+                </div>
+            </div>
+        </div>
+        <div class="December box">
+            <div class="card mb-3" style="width: 99.5%;">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Table showing December 2017/2018
+                </div>
+                <div class="card-block">
+
+                </div>
+            </div>
+        </div>
+        
     </div>
     <!-- /.container-fluid -->
 
@@ -91,6 +128,9 @@
 
 <!-- Custom scripts for this template -->
 <script src="/static/js/sb-admin.min.js"></script>
+
+<!--Script for switching -->
+<script src="/static/js/switcher.js"></script>
 
 
 {% endblock %}

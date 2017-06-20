@@ -74,10 +74,3 @@ function drawLineChart() {
     chart.draw(data, google.charts.Line.convertOptions(options));
 }
 
-$(document).ready(function(){
-    $(".dropdown-menu li a").on("click",function(){
-	 var iddiv =  $(this).attr("id") ;
-         $(".box").hide();
-         $("."+iddiv).show();
-            });
- });
