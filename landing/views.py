@@ -53,43 +53,84 @@ def future(request):
 #Budget Section
 def budget(request):
     table = BudgetTable(Budget.objects.all())
-    RequestConfig(request, paginate={'per_page': 10}).configure(table)
+    RequestConfig(request, paginate=False).configure(table)
+    #The paginate can be activated by replacing the false with {'per_page': XX}
+    #Depending on how you many values you want displayed on each page
     return render(request, 'landing/budgets.html', {'table': table})
 
 def first(request):
-    table = QuarterOne(Budget.objects.all())
-    RequestConfig(request, paginate={'per_page': 10}).configure(table)
-    return render(request, 'landing/Qone.html', {'table': table})
+    budgetData = Budget.objects.all()
+    table = QuarterOne(budgetData)
+    JulyTable = JulyBudget(budgetData)
+    AugustTable = AugustBudget(budgetData)
+    SeptemberTable = SeptemberBudget(budgetData)
+    RequestConfig(request, paginate=False).configure(table)
+    RequestConfig(request, paginate=False).configure(JulyTable)
+    RequestConfig(request, paginate=False).configure(AugustTable)
+    RequestConfig(request, paginate=False).configure(SeptemberTable)
+
+    payload = {
+        'table': table,
+        'JulyTable': JulyTable,
+        'AugustTable': AugustTable,
+        'SeptemberTable': SeptemberTable,
+    }
+
+    return render(request, 'landing/Qone.html', payload)
 
 def second(request):
-    table = QuarterTwo(Budget.objects.all())
-    RequestConfig(request, paginate={'per_page': 10}).configure(table)
-    return render(request, 'landing/Qtwo.html', {'table': table})
+    budgetData = Budget.objects.all()
+    table = QuarterTwo(budgetData)
+    OctoberTable = OctoberBudget(budgetData)
+    NovemberTable = NovemberBudget(budgetData)
+    DecemberTable = DecemberBudget(budgetData)
+    RequestConfig(request, paginate=False).configure(table)
+    RequestConfig(request, paginate=False).configure(OctoberTable)
+    RequestConfig(request, paginate=False).configure(NovemberTable)
+    RequestConfig(request, paginate=False).configure(DecemberTable)
+
+    payload = {
+        'table': table,
+        'OctoberTable': OctoberTable,
+        'NovemberTable': NovemberTable,
+        'DecemberTable': DecemberTable,
+    }
+    return render(request, 'landing/Qtwo.html', payload)
 
 def third(request):
-    table = QuarterThree(Budget.objects.all())
-    RequestConfig(request, paginate={'per_page': 10}).configure(table)
-    return render(request, 'landing/Qthree.html', {'table': table})
+    budgetData = Budget.objects.all()
+    table = QuarterThree(budgetData)
+    JanuaryTable = JanuaryBudget(budgetData)
+    FebruaryTable = FebruaryBudget(budgetData)
+    MarchTable = MarchBudget(budgetData)
+    RequestConfig(request, paginate=False).configure(table)
+    RequestConfig(request, paginate=False).configure(JanuaryTable)
+    RequestConfig(request, paginate=False).configure(FebruaryTable)
+    RequestConfig(request, paginate=False).configure(MarchTable)
+
+    payload = {
+        'table': table,
+        'JanuaryTable': JanuaryTable,
+        'FebruaryTable': FebruaryTable,
+        'MarchTable': MarchTable,
+    }
+    return render(request, 'landing/Qthree.html', payload)
 
 def fourth(request):
-    table = QuarterFour(Budget.objects.all())
-    RequestConfig(request, paginate={'per_page': 10}).configure(table)
-    return render(request, 'landing/Qfour.html', {'table': table})
+    budgetData = Budget.objects.all()
+    table = QuarterFour(budgetData)
+    AprilTable = AprilBudget(budgetData)
+    MayTable = MayBudget(budgetData)
+    JuneTable = JuneBudget(budgetData)
+    RequestConfig(request, paginate=False).configure(table)
+    RequestConfig(request, paginate=False).configure(AprilTable)
+    RequestConfig(request, paginate=False).configure(MayTable)
+    RequestConfig(request, paginate=False).configure(JuneTable)
 
-def julybudget(request):
-    jtable = JulyBudget(Budget.objects.all())
-    RequestConfig(request).configure(table)
-    return render(request, 'landing/july.html', {'table': table})
-
-def augustbudget(request):
-    table = AugustBudget(Budget.objects.all())
-    RequestConfig(request).configure(table)
-    return render(request, 'landing/august.html', {'table': table})
-
-def test(request):
-    queryset = Budget.objects.all()
-    # DataSource object
-    data_source = ModelDataSource(queryset, fields=['BudgetItem','Total'])
-    # Chart object
-    pie_chart = gchart.PieChart(data_source)
-    return render(request, 'landing/tickle.html')
+    payload = {
+        'table': table,
+        'AprilTable': AprilTable,
+        'MayTable': MayTable,
+        'JuneTable': JuneTable,
+    }
+    return render(request, 'landing/Qfour.html', payload)

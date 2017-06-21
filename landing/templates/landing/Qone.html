@@ -64,9 +64,9 @@
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">First Quarter Months<span class="caret"></span></button>
             <ul class="dropdown-menu" id='purpose'>
-                <li><a href="#" data-value="action1" id="July">July</a></li>
-                <li><a href="#" data-value="action2" id="August">August</a></li>
-                <li><a href="#" data-value="action3" id="September">September</a></li>
+                <li><a href="#july" data-value="action1" id="July">July</a></li>
+                <li><a href="#august" data-value="action2" id="August">August</a></li>
+                <li><a href="#september" data-value="action3" id="September">September</a></li>
             </ul>
         </div>
         <br>
@@ -76,7 +76,7 @@
                     <i class="fa fa-table"></i> Table showing July 2017/2018
                 </div>
                 <div class="card-block">
-
+                    {% load django_tables2 %}{% render_table JulyTable %}
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                     <i class="fa fa-table"></i> Table showing August 2017/2018
                 </div>
                 <div class="card-block">
-
+                    {% load django_tables2 %}{% render_table AugustTable %}
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                     <i class="fa fa-table"></i> Table showing September 2017/2018
                 </div>
                 <div class="card-block">
-
+                    {% load django_tables2 %}{% render_table SeptemberTable %}
                 </div>
             </div>
         </div>

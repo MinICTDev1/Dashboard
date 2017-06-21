@@ -18,8 +18,6 @@ urlpatterns = [
     url(r'^export/$', views.export, name='export'),
 
     #respective months
-    url(r'^july/$', views.julybudget, name='july'),
-    url(r'^august/$', views.augustbudget, name='august'),
     url(r'^QOne/$', views.first, name='first'),
     url(r'^QTwo/$', views.second, name='second'),
     url(r'^QThree/$', views.third, name='third'),

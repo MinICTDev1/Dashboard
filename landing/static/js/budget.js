@@ -1,7 +1,9 @@
 google.charts.load('current', {
     'packages': ['corechart']
 });
-google.charts.load('current', {'packages':['line']});
+google.charts.load('current', {
+    'packages': ['line']
+});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawLineChart);
 
@@ -25,13 +27,17 @@ function drawChart() {
     ]);
 
     var options = {
-        title: 'Annual Expenditure',
-        is3D: true,
-    };
+        chart: {
+            title: 'Annual Expenditure',
+            is3D: true,
+        },
+        width: 900,
+        height: 500
+};
 
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-    chart.draw(data, options);
+chart.draw(data, options);
 }
 
 
@@ -73,4 +79,3 @@ function drawLineChart() {
 
     chart.draw(data, google.charts.Line.convertOptions(options));
 }
-
