@@ -79,7 +79,7 @@ class Budget(models.Model):
 
     fin_year = models.ForeignKey('Year', related_name='financial_years', on_delete=models.CASCADE)
     BudgetItem = models.CharField(max_length=200, default="")
-    Approved = models.PositiveIntegerField(default=0)
+    Approved = models.PositiveIntegerField(default=0, help_text="Enter a figure, excluding commas")
     Estimates = models.PositiveIntegerField(default=0)
     July = models.PositiveIntegerField(default=0)
     August = models.PositiveIntegerField(default=0)

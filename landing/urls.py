@@ -29,3 +29,18 @@ urlpatterns = [
     url(r'^projects/stalled/$', views.stalled, name='stalled'),
     url(r'^projects/future/$', views.future, name='future'),
 ]
+
+# Use include() to add URLS from the other applications from the startapp 
+# from django.conf.urls import include
+
+# urlpatterns += [
+#     url(r'^catalog/', include('catalog.urls')),
+# ]
+
+#Add URL maps to redirect the base URL to our application
+# from django.views.generic import RedirectView
+# urlpatterns += [
+#     url(r'^$', RedirectView.as_view(url='/catalog/', permanent=True)),
+# ]
+
+#alternatively 

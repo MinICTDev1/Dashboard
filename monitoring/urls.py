@@ -24,3 +24,10 @@ urlpatterns = [
     url(r'^landing/', include('landing.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+#here you add the details for the other apps i.e budget and projects
+
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+]
