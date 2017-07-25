@@ -4,7 +4,7 @@ from .models import Budget, Project
 class BudgetTable(tables.Table):
     class Meta:
         model = Budget
-        attrs = {'class': 'paleblue', 'width':'auto'}
+        attrs = {'class': 'paleblue', 'width':'50%'}
         fields = ("BudgetItem","Approved","Estimates","July","August","September","October","November", "December", "January", "February" , "March", "April", "May" ,"June","Total")
 
 class QuarterOne(tables.Table):
@@ -111,7 +111,7 @@ class OngoingTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year", "district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'222%'}
+        attrs = {'class': 'paleblue', 'width':'auto'}
 
     district = tables.Column()
 
@@ -124,7 +124,7 @@ class CompletedTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'222%'}
+        attrs = {'class': 'paleblue', 'width':'auto'}
 
     district = tables.Column()
 
@@ -137,7 +137,7 @@ class StalledTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'222%'}
+        attrs = {'class': 'paleblue', 'width':'auto'}
 
     district = tables.Column()
 
@@ -150,7 +150,7 @@ class FutureTable(tables.Table):
     class Meta:
         model = Project
         fields = ( "Project_name", "fin_year","district", "project_status")
-        attrs = {'class': 'paleblue', 'width':'222%'}
+        attrs = {'class': 'paleblue', 'width':'auto'}
 
     district = tables.Column()
 

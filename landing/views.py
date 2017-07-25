@@ -31,22 +31,22 @@ def projects(request):
 
 def ongoing(request):
     table = OngoingTable(Project.objects.filter(project_status='OG'))
-    RequestConfig(request).configure(table)
+    RequestConfig(request, paginate=False).configure(table)
     return render(request, 'landing/ongoing.html', {'table': table})
 
 def completed(request):
     table = CompletedTable(Project.objects.filter(project_status='CO'))
-    RequestConfig(request).configure(table)
+    RequestConfig(request, paginate=False).configure(table)
     return render(request, 'landing/completed.html', {'table': table})
 
 def stalled(request):
     table = StalledTable(Project.objects.filter(project_status='ST'))
-    RequestConfig(request).configure(table)
+    RequestConfig(request, paginate=False).configure(table)
     return render(request, 'landing/stalled.html', {'table': table})
 
 def future(request):
     table = FutureTable(Project.objects.filter(project_status='FR'))
-    RequestConfig(request).configure(table)
+    RequestConfig(request, paginate=False).configure(table)
     return render(request, 'landing/future.html', {'table': table})
 
 
