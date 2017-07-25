@@ -1,4 +1,8 @@
-div.card {
+body {
+    background: white url("/static/images/InOut/proper.png") no-repeat fixed center;
+    background-size: contain;
+}
+.card {
   width: 400px;
   height: 310px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -9,15 +13,16 @@ div.card {
   left: 0;
   right: 0;
   margin: auto;
+  background-color: grey;
 }
 
-div.header {
+.header {
     background-color: grey;
     color: white;
     padding: 10px;
     font-size: 20px;
 }
 
-div.container {
+.container {
     padding: 10px;
 }
